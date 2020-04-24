@@ -1,5 +1,5 @@
 <?php
-namespace app\apiResponce;
+namespace app;
 /**
  * api返回数据
  */
