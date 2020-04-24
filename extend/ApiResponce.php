@@ -5,35 +5,30 @@ namespace app;
  */
 class ApiResponce
 {
-	
-	function __construct(argument)
-	{
-		# code...
-	}
 
-	public static function success($data){
+	public static function success($data=array()){
 		$code = 200;
 		$msg = 'success';
 		self::json($code,$msg,$data);
 	}
 
-	public static function err($msg,$data={}){
+	public static function err($msg,$data=array()){
 		$code = 500;
 		$msg = $msg ? $msg : '操作失败';
 		self::json($code,$msg,$data);
 	}
 
-	public static function checkFailed($msg,$data={}){
+	public static function checkFailed($msg,$data=array()){
 		$code = 300;
 		$msg = $msg ? $msg : '参数校验错误';
-		self::json($code,$msg,$data)
+		self::json($code,$msg,$data);
 	}
 
 
 
 
-	public static function json($code,$msg,$data,$type){
-		$type = $type ? $type : 'JSON';
+	public static function json($code,$msg,$data,$type="JSON"){
+		
         $result=array(
                 'code'=>$code,
                 'msg'=>$msg,

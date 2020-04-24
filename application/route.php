@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 use think\Route;
 
-Route::controller('user','index/Index');//index控制器
+Route::alias('user','index/Index');//index控制器
 // return [
 // 	'new/:id' =>'index/controller/Index':
 // ]

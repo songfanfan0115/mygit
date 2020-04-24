@@ -7,5 +7,10 @@ class Index extends Controller
     {
         $user = $this->request->param('name');
         $pass = $this->request->param('pass');
+        $result = new \app\index\model\Index();
+        print_r($result);
+        // \app\ApiResponce::success($result);
+        
+        // $json->success(array('name' => ,'11111' ));
     }
 }
