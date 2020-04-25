@@ -1,10 +1,9 @@
 <?php
-namespace extend;
-use think\Responce;
+namespace app\common;
 /**
  * api返回数据
  */
-class ApiResponce extends Responce
+class ApiResponce
 {
 
 	public static function success($data=array()){
@@ -57,4 +56,7 @@ class ApiResponce extends Responce
         }
 	}
 }
+
+
+
 ?>
