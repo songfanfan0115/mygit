@@ -9,12 +9,12 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 use think\Route;
-
-Route::alias('user','index/Index');//index控制器
+Route::controller('user', 'index/Index');
+// Route::alias('user','index/Index');//index控制器
 // return [
 // 	'new/:id' =>'index/controller/Index':
 // ]
-
+// https://www.kancloud.cn/manual/thinkphp5/177576
 // return [
 //     '__pattern__' => [
 //         'name' => '\w+',
