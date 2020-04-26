@@ -1,18 +1,18 @@
 <?php
 namespace app\index\validate;
-use think\Validate;
+use app\common\BaseValidate;
 /**
  * 验证类
  */
-class Index extends Validate
+class Index extends BaseValidate
 {
-	protected $rules =   [
+	protected $rule =   [
         'name'  => 'require|max:25',
         'age'   => 'number|between:1,120',
         'email' => 'email',    
     ];
     
-    protected $messages  =   [
+    protected $message  =   [
         'name.require' => '名称必须',
         'name.max'     => '名称最多不能超过25个字符',
         'age.number'   => '年龄必须是数字',
@@ -21,25 +21,8 @@ class Index extends Validate
     ];
 
     protected $scene = [
-        'scene'  =>  [],
-    ];
-	function __construct($data)
-	{
-
-		if(is_string($data)){
-			$this->$rule[$data] = $this->$rules[$data];
-			$this->$rule[$data] = $this->$rules[$data]
-		}
-	}
-	
-	
-    /**
-    *
-    */
-    public checkData(){
-    	$validate = new Index($rule);
-		$result = $validate->scene('scene')->check($data);
-    }
+        'edit'  =>  ['name'],
+    ];	
 }
 
 ?>

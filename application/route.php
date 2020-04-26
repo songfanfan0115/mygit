@@ -9,8 +9,22 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 use think\Route;
-Route::controller('user', 'index/Index');
-// Route::alias('user','index/Index');//index控制器
+// Route::controller('user', 'index/Index');
+// 请求类型参数必须大写
+Route::alias('user','index/Index',[
+	'method'=>[
+		'index'=>'GET',
+		
+	]
+]);//index控制器
+
+
+Route::alias('file','file/File',[
+	'method'=>[
+		'index'=>'POST',
+		
+	]
+]);
 // return [
 // 	'new/:id' =>'index/controller/Index':
 // ]
