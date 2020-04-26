@@ -11,20 +11,19 @@
 use think\Route;
 // Route::controller('user', 'index/Index');
 // 请求类型参数必须大写
-Route::alias('user','index/Index',[
-	'method'=>[
-		'index'=>'GET',
-		
-	]
-]);//index控制器
+Route::alias('user', 'index/Index', [
+		'method' => [
+			'index' => 'GET',
 
+		],
+	]);//index控制器
 
-Route::alias('file','file/File',[
-	'method'=>[
-		'index'=>'POST',
-		
-	]
-]);
+Route::alias('file', 'file/File', [
+		'method' => [
+			'test'  => 'GET',
+
+		],
+	]);
 // return [
 // 	'new/:id' =>'index/controller/Index':
 // ]
