@@ -20,6 +20,7 @@ Route::alias('user', 'index/Index', [
 
 Route::alias('file', 'file/File', [
 		'method' => [
+			'uploadFile'=>'POST',
 			'test'  => 'GET',
 
 		],

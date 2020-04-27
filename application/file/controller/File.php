@@ -3,7 +3,6 @@ namespace app\file\controller;
 
 use app\file\model\File as FileModel;
 use think\Controller;
-
 /**
  * 附件
  */
@@ -14,19 +13,36 @@ class File extends Controller {
 	 */
 	public function uploadFile() {
 		$file = request()->file('file');
+		
 		//$msg=$file->validate(['size'=>15678,'ext'=>'jpg,png,gif']);
 		if ($file) {
 			$this->upload($file);
+			
 		} else {
 			\app\common\ApiResponce::checkFailed('文件不可为空');
 		}
 	}
+
+
+	/**
+	 * [getFileByIds 根据ids获取数据]
+	 * @return [json] []
+	 */
+	public function getFileByIds() {
+		$param = $this->request->param('ids');
+		
+		$result = (new FileModel())->getByIds($param);
+		
+		\app\common\ApiResponce::success($result);
+		
+	}
+
 	/**
 	 * [upload 上传到服务器制定目录，存库]
 	 * @param  [type] $info [file对象]
 	 * @return [type]       [description]
 	 */
-	public function upload($info) {
+	public function upload($file) {
 
 		$info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
 
@@ -41,6 +57,10 @@ class File extends Controller {
 			\app\common\ApiResponce::err($file->getError());
 		}
 
+	}
+
+	public function ceshi(){
+		print_r('File.php');
 	}
 
 }

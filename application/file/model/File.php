@@ -19,5 +19,12 @@ class File extends Model
 		$file->save();
 		return $file->id;
 	}
+
+	public function getByIds($ids){
+		$file = new File();
+		return $file->all($ids);
+
+	}
+
 }
 ?>
