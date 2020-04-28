@@ -15,7 +15,7 @@ class ExceptionHandler extends Handle {
 	 */
 	public $httpCode = 500;
 
-	public function render(\Exception $e) {
+	public function render(Exception $e) {
 		$debug_status = config("app_debug");
 		if ($debug_status) {
 			return parent::render($e);
