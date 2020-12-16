@@ -23,8 +23,9 @@ class Index extends BaseValidate {
 	];
 
 	protected $scene = [
-		'edit' => ['name'],
-		'byId' => ['id'],
+		'id' => ['id'],
+		// 'edit' => ['name'],
+
 	];
 }
 

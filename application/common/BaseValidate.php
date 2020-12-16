@@ -15,11 +15,10 @@ class BaseValidate extends Validate {
 		// 		$newRule[$key] = $val;
 		// 	}
 		// }
-
-		$result = $this->scene($scene)->check($data);
-		// $result = $this->check($data, $newRule);
+		$result = $this->scene($scenes)->check($data);
+		// $result = $this->validate($data, "user" . $scenes);
 		if (!$result) {
-			$msg = $this->getError();
+			$msg = $validate->getError();
 			exit(\app\common\ApiResponce::checkFailed($msg));
 		} else {
 			return true;

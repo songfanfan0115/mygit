@@ -1,7 +1,7 @@
 <?php
 namespace app\index\controller;
 use app\common\GetParams;
-use app\index\validate;
+use app\index\model\User;
 use think\Controller;
 
 class Index extends Controller {
@@ -23,7 +23,7 @@ class Index extends Controller {
 
 	public function getById() {
 		$params = (new GetParams())->index(["id"]);
-		(new \app\index\validate\Index())->checkData($params, 'byId');
+		// (new \app\index\validate\Index())->checkData($params, 'id');
 
 		$result = (new User())->index($params["id"]);
 
